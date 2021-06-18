@@ -1,0 +1,103 @@
+<div class="main-content">
+  <div class="section__content section__content--p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="title-1 m-b-25">The best football clubs of Europe</h2>
+          <div class="table-responsive table--no-card m-b-40">
+            <mat-form-field>
+              <mat-label>Search</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="search" #input>
+            </mat-form-field>
+            <table mat-table
+                   matSort [dataSource]="dataSource"
+                   class="table table-borderless table-striped table-earning"
+            >
+              <ng-container matColumnDef="id">
+                <th *matHeaderCellDef mat-header-cell mat-sort-header class="col-id"> # </th>
+                <td *matCellDef="let element" mat-cell class="col-id">
+                  {{element.id}}
+                </td>
+              </ng-container>
+              <!-- Name Column -->
+              <ng-container matColumnDef="club">
+                <th mat-header-cell *matHeaderCellDef class="col-club"> Club </th>
+                <td mat-cell *matCellDef="let element" class="col-club">
+                  <a href="#">
+                    <div>
+<!--                      <img src="{{dataHandler.getClubLogo(element.club)}}">-->
+                      <span> {{element.club}}</span>
+                    </div>
+                  </a>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef class="col-country"> Country </th>
+                <td mat-cell *matCellDef="let element" class="col-country">
+                  <a href="#">
+                    <div>
+                      <img src="{{dataHandler.getCountryFlag(element.country)}}" height="50" width="30">
+                      <span> {{element.country.toUpperCase()}}</span>
+                    </div>
+                  </a>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="r2020">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="col-rating"> 2020 </th>
+                <td mat-cell *matCellDef="let element" class="col-rating">{{element.r2020}}</td>
+              </ng-container>
+              <ng-container matColumnDef="r2021">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="col-rating"> 2021 </th>
+                <td mat-cell *matCellDef="let element" class="col-rating"> {{element.r2021}} </td>
+              </ng-container>
+              <ng-container matColumnDef="total">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="col-rating"> Total </th>
+                <td mat-cell *matCellDef="let element" class="col-rating"> {{element.total}} </td>
+              </ng-container>
+              <ng-container matColumnDef="millions">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef class="col-million"> Millions € </th>
+                <td mat-cell *matCellDef="let element" class="col-million">
+                  <span [ngClass]="{
+                  red: element.millions > 1000.00,
+                  green: element.millions <= 1000.00}">{{element.millions}}</span>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+             </table>
+            <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+<!--<div class="report-table-container mat-elevation-z8">-->
+<!--  <h2 class="title-1 m-b-25">The best football clubs of Europe</h2>-->
+<!--  <table border="1" cellpadding="5" class="table">-->
+<!--    <tr>-->
+<!--      <th class="th">ID</th>-->
+<!--      <th class="th">Club</th>-->
+<!--      <th class="th">Country</th>-->
+<!--      <th class="th" >2021</th>-->
+<!--      <th class="th">Total</th>-->
+<!--      <th class="th">Millions €</th>-->
+<!--      &lt;!&ndash;      <th class="th">Checked</th>&ndash;&gt;-->
+<!--    </tr>-->
+<!--    <tr *ngFor="let club of footballClubsChecks; let i=index" class="td">-->
+<!--      <ng-container *ngIf="club.checked && club.millions<priceClubMax && club.millions>priceClubMin">-->
+<!--        <td class="td">{{club.id}}</td>-->
+<!--        <td class="td">{{club.club}}</td>-->
+<!--        <td class="td">{{club.country}}</td>-->
+<!--        <td class="td">{{club.r2021}}</td>-->
+<!--        <td class="td">{{club.total}}</td>-->
+<!--        <td class="td">{{club.millions}}</td>-->
+<!--        &lt;!&ndash;           <td class="td">{{club.checked}}</td>&ndash;&gt;-->
+<!--      </ng-container>-->
+
+<!--    </tr>-->
+<!--  </table>-->
+<!--</div>-->
+
+

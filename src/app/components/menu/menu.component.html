@@ -1,0 +1,50 @@
+<div class="menu-sidebar__content js-scrollbar1">
+  <nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar__list">
+      <li class="active has-sub">
+        <a class="js-arrow" href="#">
+          <img src="assets/icon/football.jpg" height="50" width="30">
+          <i class="fas fa-tachometer-alt"></i>
+          <button class="btn-link">Evro Football Top</button>
+        </a>
+        <div>
+          <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+            <li>
+              <a href="#"><button class="btn-link" (click)="buttonClubClick()">Top Football Clubs</button></a>
+            </li>
+            <li>
+              <a href="#"><button class="btn-link" (click)="buttonCountriesClick()">Top Football Countries</button></a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <hr />
+       <h2 class="title-1 m-b-25">Filters Clubs</h2>
+      <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+        <li>
+          <a href="#"><button class="btn-link" [disabled]="!clubClick" (click)="checkBoxClub=!checkBoxClub">Clubs</button></a>
+        </li>
+        <div *ngIf="checkBoxClub">
+          <hr />
+          <app-check-club [checkClub]="checkClub"></app-check-club>
+          <hr />
+        </div>
+        <li>
+          <a href="#"><button class="btn-link" [disabled]="!clubClick" (click)="sliderPrice=!sliderPrice">Price</button></a>
+        </li>
+        <div *ngIf="sliderPrice">
+          <hr />
+          <app-slider-price [checkClub]="checkClub"></app-slider-price>
+          <hr />
+        </div>
+      </ul>
+      <hr />
+  </nav>
+</div>
+
+
+
+
+
+

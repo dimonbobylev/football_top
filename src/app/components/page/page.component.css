@@ -1,0 +1,42 @@
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+/*.th {*/
+/*  border: 1px solid black;*/
+/*  text-align: center;*/
+/*  background: whitesmoke;*/
+/*  font-weight: 500;*/
+/*}*/
+/*.td {*/
+/*  border: 1px solid black;*/
+/*  text-align: center;*/
+/*}*/
+/*.table {*/
+/*  border-spacing: 0;*/
+/*  border-collapse: collapse;*/
+/*  width: 100%;*/
+/*  border: 1px solid black;*/
+/*}*/
+.col-id {
+  width: 5%;
+  text-align: center;
+}
+.col-club {
+  width: 33%;
+  text-align: left;
+}
+.col-country {
+  width: 25%;
+  text-align: left;
+}
+.col-rating {
+  width: 9%;
+  text-align: center;
+}
+.col-million {
+  width: 11%;
+  text-align: center;
+}

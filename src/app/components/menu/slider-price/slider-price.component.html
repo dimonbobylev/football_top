@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Slider configuration</h2>
+
+    <section class="example-section">
+      <mat-form-field class="example-margin">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="valueMin" (click)="changeMinPrice()">
+      </mat-form-field>
+      <mat-form-field class="example-margin">
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="valueMax" (click)="changeMaxPrice()">
+      </mat-form-field>
+      <!--      <mat-form-field class="example-margin">-->
+      <!--        <mat-label>Min value</mat-label>-->
+      <!--        <input matInput type="number" [(ngModel)]="min">-->
+      <!--      </mat-form-field>-->
+      <!--      <mat-form-field class="example-margin">-->
+      <!--        <mat-label>Max value</mat-label>-->
+      <!--        <input matInput type="number" [(ngModel)]="max">-->
+      <!--      </mat-form-field>-->
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-result-card">
+  <mat-card-content>
+    <h2>Result</h2>
+    <br>
+    <br>
+    <mat-slider
+      class="example-margin"
+      color="primary"
+      [max]="max"
+      [min]="min"
+      (change)="changeMinPrice()"
+      [tickInterval]="getSliderTickInterval()"
+      [(ngModel)]="valueMin"
+      aria-labelledby="example-name-label">
+    </mat-slider>
+    <mat-slider
+      class="example-margin"
+      color="primary"
+      [max]="max"
+      [min]="min"
+      (change)="changeMaxPrice()"
+      [tickInterval]="getSliderTickInterval()"
+      [(ngModel)]="valueMax"
+      aria-labelledby="example-name-label">
+    </mat-slider>
+  </mat-card-content>
+</mat-card>
+

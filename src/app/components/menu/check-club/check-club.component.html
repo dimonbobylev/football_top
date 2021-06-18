@@ -1,0 +1,27 @@
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox class="example-margin"
+                  [checked]="allChecked"
+                  color="primary"
+                  [indeterminate]="someComplete()"
+                  (change)="setAll($event.checked)">
+      {{club.name}}
+    </mat-checkbox>
+  </span>
+  <span class="example-list-section">
+    <ul>
+      <li *ngFor="let club of checkClub">
+        <mat-checkbox [(ngModel)]="club.checked"
+                      color="primary"
+                      (ngModelChange)="updateAllChecked()"
+                      (click)="clickCheckBox()"
+        >
+<!--        <mat-checkbox color="primary"-->
+          <!--                      (click)="clickCheckBox(club)"-->
+          <!--        >-->
+          {{club.club}}
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
